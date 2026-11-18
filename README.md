@@ -30,7 +30,7 @@ Corre en local; no funciona en sandboxes web como Claude.ai o ChatGPT web.
   [`referencias/trampas.md`](video-explicativo/referencias/trampas.md) → Voz.
 - Los sonidos salen de la skill `media-use` de HyperFrames, en `~/.agents/skills/media-use`.
 
-## Fuentes
+## Licencia
 
-La plantilla trae la fuente Manrope, con licencia SIL Open Font License 1.1
-([`video-explicativo/OFL-Manrope.txt`](video-explicativo/OFL-Manrope.txt)).
+El código y las instrucciones van con licencia [MIT](LICENSE). La plantilla trae además la fuente Manrope, que
+conserva su licencia SIL Open Font License 1.1 ([`video-explicativo/OFL-Manrope.txt`](video-explicativo/OFL-Manrope.txt)).
