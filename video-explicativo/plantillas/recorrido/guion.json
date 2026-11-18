@@ -1,0 +1,10 @@
+{
+ "nota": "Una línea = una escena (mismo id en tomas.mjs y en proyecto.json). Las cifras van EN PALABRAS (la voz las lee bien) y cada una debe verse en pantalla en esa escena; el subtítulo las vuelve dígitos con proyecto.json → pantalla.",
+ "lineas": [
+  {"id": "i1", "texto": "Este video le muestra el tablero de pedidos: qué ve al entrar y cómo registra un pedido nuevo."},
+  {"id": "t1", "texto": "Al entrar ve el tablero del día. Arriba están los pedidos de hoy, doce pedidos, y los despachados, nueve."},
+  {"id": "t2", "texto": "Para registrar un pedido, toque Nuevo pedido. Escriba el nombre del cliente, después el producto, y al final toque Guardar pedido."},
+  {"id": "t3", "texto": "El pedido aparece de primero en la lista y el contador sube a trece."},
+  {"id": "z1", "texto": "Así de simple: todo queda en el tablero, a la vista de su equipo."}
+ ]
+}

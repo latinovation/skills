@@ -1,0 +1,87 @@
+{
+ "nota": "EJEMPLO FICTICIO. Reemplazar con los casos reales: textos copiados de la base (recortes con «…», contacto con •), cifras del resumen sacadas de una consulta guardada en sql/. Mensajes: [rol, texto, extra]; rol u = cliente, a = asistente, photo = marcador de foto (nunca la imagen), card = tarjeta con enlace. extra: {\"step\": i} muestra el paso i del riel al llegar ese mensaje (\"step2\" = un segundo paso en el mismo mensaje), {\"result\": true} en el mensaje del resultado.",
+ "nombre": "Ana, la asistente de Pedidos Demo",
+ "idioma": "es",
+ "hyperframes": "0.9.63",
+ "texto_prohibido": ["—"],
+ "marca": {
+  "fondo": "#123A44",
+  "oscuro": "#0E2E36",
+  "primario": "#2E7D8C",
+  "suave": "#B4D2D8",
+  "resalte": "#FFE14D",
+  "tinta": "#3F4448",
+  "familia_texto": "Manrope",
+  "familia_titulos": "Manrope",
+  "fuentes": [{"familia": "Manrope", "archivo": "assets/fonts/Manrope-latin.woff2", "peso": "200 800"}],
+  "fondo_imagen": null,
+  "logo": null
+ },
+ "asistente": {
+  "nombre": "Ana",
+  "saludo": "Hola, soy Ana. Te ayudo con pedidos, precios y entregas.",
+  "placeholder": "Escribe tu pregunta",
+  "enviar": "Enviar",
+  "escribiendo": "Ana está escribiendo",
+  "enlace": "Ver página"
+ },
+ "intro": {
+  "ceja": "pedidosdemo.co · 3 al 16 de noviembre",
+  "titulo": "Las dos semanas de Ana",
+  "sub": "2 conversaciones terminaron en pedido. Así las atendió Ana.",
+  "nota": "Conversaciones reales, resumidas. Datos de contacto ocultos.",
+  "boton_h": [1870, 1030],
+  "boton_v": [992, 1831]
+ },
+ "capitulos": [
+  {
+   "id": "marta",
+   "ceja": "Martes 3 de nov · 9:12 a. m. · Cali",
+   "nombre": "Marta",
+   "pregunta": "“¿Cuánto vale el envío a Cali?”",
+   "pregunta_sub": null,
+   "pasos": [
+    ["Marta preguntó", "El envío a Cali", null],
+    ["Ana revisó", "Envío gratis desde $80.000", "gratis"],
+    ["Marta pidió", "Seis aceites para el viernes", null]
+   ],
+   "resultado": ["Pedido creado", "Seis aceites, entrega el viernes en Cali"],
+   "mensajes": [
+    ["u", "¿Cuánto vale el envío a Cali?", {"step": 0}],
+    ["a", "A Cali el envío es **gratis** en pedidos desde $80.000. ¿Qué te gustaría pedir?", {"step": 1}],
+    ["u", "Seis aceites de girasol para el viernes", {"step": 2}],
+    ["a", "Listo: seis aceites de girasol, entrega el viernes. ¿A qué nombre lo dejo?", {}],
+    ["u", "Marta ••••••", {}],
+    ["a", "Perfecto, Marta. Tu pedido quedó creado y llega el viernes.", {"result": true}]
+   ]
+  },
+  {
+   "id": "jorge",
+   "ceja": "Jueves 12 de nov · 7:40 p. m. · Palmira",
+   "nombre": "Jorge",
+   "pregunta": "“Hola, ¿tienen arroz por bulto?”",
+   "pregunta_sub": "Mandó una foto de la etiqueta",
+   "pasos": [
+    ["Ana leyó la foto", "Arroz blanco, bulto de 25 kg", null],
+    ["Cobertura", "Palmira: entrega en 2 días", "2 días"]
+   ],
+   "resultado": ["Pedido creado", "Dos bultos de arroz para Palmira"],
+   "mensajes": [
+    ["photo", "Foto enviada", {}],
+    ["u", "Hola, ¿tienen arroz por bulto?", {}],
+    ["a", "Sí: en la foto veo arroz blanco en **bulto de 25 kg**. ¿Cuántos necesitas?", {"step": 0}],
+    ["u", "Dos, para Palmira", {}],
+    ["a", "A Palmira llega en 2 días. Te dejo el pedido de dos bultos.", {"step": 1, "result": true}]
+   ]
+  }
+ ],
+ "resumen": {
+  "ceja": "3 al 16 de noviembre en pedidosdemo.co",
+  "filas": [
+   ["Marta", "Cali", "Seis aceites, entrega el viernes"],
+   ["Jorge", "Palmira · Foto", "Dos bultos de arroz"]
+  ],
+  "cierre": "2 pedidos en **2 ciudades**. Los dos quedaron en el sistema."
+ },
+ "fin": {"lema": "Ana, en línea en pedidosdemo.co"}
+}

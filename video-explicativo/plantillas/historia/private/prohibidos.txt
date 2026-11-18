@@ -1,0 +1,1 @@
+# Un dato por línea, escrito por script desde los crudos (nunca a mano en el chat).

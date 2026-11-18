@@ -1,0 +1,47 @@
+{
+ "nombre": "Tablero de pedidos",
+ "url_base": "http://127.0.0.1:4321",
+ "archivo_salida": "Video_Tablero_Pedidos_Recorrido",
+ "idioma": "es",
+ "hyperframes": "0.9.63",
+ "voz": {
+  "id": "ef_dora",
+  "fonemas": "es-419",
+  "velocidades": [0.9, 0.86, 0.94],
+  "similitud_minima": 0.9
+ },
+ "grabacion": {
+  "ancho": 1600,
+  "alto": 900,
+  "entrada_s": 0.45,
+  "salida_s": 1.0,
+  "angle": "metal",
+  "locale": "es-CO",
+  "zona": "America/Bogota",
+  "espera_ms": 15000
+ },
+ "marca": {
+  "fondo": "#0B1220",
+  "acento": "#F5A623",
+  "acento2": "#1E7BF2",
+  "fuente": "Manrope",
+  "archivo_fuente": "assets/fonts/Manrope-latin.woff2",
+  "logo": null
+ },
+ "intro": {"voz": "i1", "titulo": "Recorrido completo", "sub": "Tablero de pedidos · demostración"},
+ "capitulos": [
+  {"id": "tablero", "titulo": "El tablero del día", "toma": "tablero", "escenas": ["t1", "t2", "t3"]}
+ ],
+ "cierre": {"voz": "z1", "titulo": "Listo para usar", "sub": "Todo queda guardado en el tablero", "extra_s": 2.0},
+ "realce": {
+  "intro": {"logo": null, "bajada": null, "pilares": [["tablero", "Tablero del día"], ["registra", "Pedido nuevo"]], "palabra_titulo": null},
+  "cierre": {"logo": null},
+  "motivo": "hexagonos",
+  "efectos": true
+ },
+ "pantalla": [
+  ["doce pedidos", "12 pedidos"],
+  ["nueve", "9"],
+  ["trece", "13"]
+ ]
+}
