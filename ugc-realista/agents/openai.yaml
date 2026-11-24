@@ -1,0 +1,6 @@
+interface:
+  display_name: "UGC realista"
+  short_description: "Videos UGC y de producto con IA que se vean reales (o 3D si lo pides), con cotización antes de gastar, control de calidad y cuaderno personal."
+  default_prompt: "Crea un video UGC realista de mi producto con la skill ugc-realista."
+policy:
+  allow_implicit_invocation: true
