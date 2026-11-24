@@ -38,11 +38,20 @@ def clave() -> str:
     return k
 
 
+def config_clave() -> str:
+    """Configuración de curl con la llave, para pasarla por la entrada estándar (`-K -`) y no en la línea de comando,
+    donde otros procesos de la computadora la verían con `ps`."""
+    k = clave()
+    if any(c in k for c in '"\\\n\r'):
+        sys.exit("KIE_API_KEY tiene caracteres no válidos (comillas, barras o saltos de línea).")
+    return f'header = "Authorization: Bearer {k}"\n'
+
+
 def http(metodo: str, url: str, cuerpo: dict | None = None) -> dict:
-    cmd = ["curl", "-s", "-m", "300", "-X", metodo, url, "-H", f"Authorization: Bearer {clave()}", "-H", "Content-Type: application/json"]
+    cmd = ["curl", "-s", "-m", "300", "-K", "-", "-X", metodo, url, "-H", "Content-Type: application/json"]
     if cuerpo is not None:
         cmd += ["-d", json.dumps(cuerpo)]
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    r = subprocess.run(cmd, input=config_clave(), capture_output=True, text=True)
     try:
         d = json.loads(r.stdout)
     except Exception:
@@ -101,8 +110,9 @@ def subir(archivos: list[str]) -> None:
     """Sube archivos locales al almacenamiento de kie (multipart) y escribe una URL por línea."""
     for ruta in archivos:
         nombre = f"{int(time.time())}_{os.path.basename(ruta)}"
-        r = subprocess.run(["curl", "-s", "-m", "300", "-X", "POST", f"{UPLOAD}/api/file-stream-upload", "-H", f"Authorization: Bearer {clave()}",
-                            "-F", f"file=@{ruta}", "-F", "uploadPath=ugc-realista", "-F", f"fileName={nombre}"], capture_output=True, text=True)
+        r = subprocess.run(["curl", "-s", "-m", "300", "-K", "-", "-X", "POST", f"{UPLOAD}/api/file-stream-upload",
+                            "-F", f"file=@{ruta}", "-F", "uploadPath=ugc-realista", "-F", f"fileName={nombre}"],
+                           input=config_clave(), capture_output=True, text=True)
         try:
             d = json.loads(r.stdout)
         except Exception:
